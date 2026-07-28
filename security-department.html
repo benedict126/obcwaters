@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security Department | OBC Water</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="department-style.css" />
+  <style>
+    /* Inline styles for the Security Spotlight Card */
+    .security-spotlight {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      margin-top: 3rem;
+    }
+
+    .security-image-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      max-height: 400px;
+    }
+
+    .security-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .security-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+      color: #1e293b;
+    }
+
+    .security-info .role {
+      font-weight: 600;
+      color: #0284c7;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .security-spotlight {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a href="First.html" class="brand"><i class="fa-solid fa-droplet"></i><span>OBC Water</span></a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+         <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="drivers-department.html">Drivers</a>
+        <a href="accounting-department.html">Accounting</a>
+        <a href="prounit.html">Production</a>
+        <a href="security-department.html">Security</a>
+
+        </div>
+        <a href="order.html" class="order-btn">Order Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-shell hero-grid">
+        <div>
+          <div class="eyebrow"><i class="fa-solid fa-shield-halved"></i> Security Department</div>
+          <h1>Protecting people, facilities, and operations around the clock.</h1>
+          <p>Our security team manages access control, incident response, visitor oversight, and emergency preparedness for every OBC Water site.</p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">Explore Services</a>
+            <a href="contact.html" class="btn btn-secondary">Contact Support</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <h3>Key focus areas</h3>
+          <div class="stat-list">
+            <div class="stat-item"><i class="fa-solid fa-user-lock"></i> Staff login management</div>
+            <div class="stat-item"><i class="fa-solid fa-file-waveform"></i> Incident reporting workflow</div>
+            <div class="stat-item"><i class="fa-solid fa-users"></i> Visitor access control</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section page-shell">
+      <div class="section-heading">
+        <h2>Department services</h2>
+        <p>Professional tools and updates that keep site security reliable and transparent.</p>
+      </div>
+      <div class="card-grid">
+        <article class="feature-card">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          <h3>Staff Login</h3>
+          <p>Secure authentication for authorized personnel and access monitoring.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <h3>Incident Reporting</h3>
+          <p>Fast incident submission and follow-up tracking for all safety concerns.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fa-solid fa-id-card"></i>
+          <h3>Visitor Access Records</h3>
+          <p>Maintain complete logs for visitors, contractors, and approved guests.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fa-solid fa-phone-volume"></i>
+          <h3>Emergency Contacts</h3>
+          <p>Immediate access to the right responders during urgent situations.</p>
+        </article>
+      </div>
+
+      <!-- SECURITY SPOTLIGHT SECTION -->
+      <div class="security-spotlight">
+        <div class="security-image-wrapper">
+          <!-- REPLACE 'images/security-guard.jpg' WITH YOUR ACTUAL PHOTO PATH -->
+          <img src="security.png" alt="OBC Water Head of Security" />
+        </div>
+        <div class="security-info">
+          <h3>On-Site Operations & Protection</h3>
+          <span class="role">Chief Security Officer</span>
+          <p>Our dedicated security personnel maintain strict facility surveillance, ensure smooth entry logs for visitors and contractors, and guarantee 24/7 protection across all OBC Water production and distribution facilities.</p>
+        </div>
+      </div>
+
+      <div class="cta-banner">
+        <div>
+          <h3>Security announcements</h3>
+          <p>Stay updated on safety alerts, facility notices, and site procedures.</p>
+        </div>
+        <a href="sdasdboard.html" class="btn btn-primary">View Announcements</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+    const dropdown = document.querySelector('.dropdown');
+
+    toggle?.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    dropdown?.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

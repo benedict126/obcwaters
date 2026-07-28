@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | OBC Water</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5fbff;
+color:#333;
+}
+
+/* HEADER */
+
+header{
+background:#0066cc;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:white;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:bold;
+transition:.3s;
+}
+
+nav a:hover{
+color:#9be8ff;
+}
+
+/* HERO */
+
+.hero{
+height:420px;
+background:linear-gradient(rgba(0,80,150,.65),rgba(0,80,150,.65)),
+url("images/factory.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:22px;
+}
+
+/* STORY */
+
+.story{
+
+padding:90px 8%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:50px;
+
+align-items:center;
+
+}
+
+.story img{
+
+width:100%;
+
+border-radius:15px;
+
+}
+
+.story h2{
+
+font-size:40px;
+
+color:#0066cc;
+
+margin-bottom:20px;
+
+}
+
+.story p{
+
+font-size:18px;
+
+line-height:1.9;
+
+}
+
+/* MISSION */
+
+.mv{
+
+padding:80px 8%;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:40px;
+
+background:#eef8ff;
+
+}
+
+.box{
+
+background:white;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.box h2{
+
+color:#0066cc;
+
+margin-bottom:20px;
+
+}
+
+.box p{
+
+line-height:1.8;
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.story{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+back-btn{
+
+position:absolute;
+
+top:30px;
+
+left:30px;
+
+width:55px;
+
+height:55px;
+
+background:rgba(255,255,255,.15);
+
+border:2px solid rgba(255,255,255,.35);
+
+backdrop-filter:blur(10px);
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-decoration:none;
+
+color:white;
+
+font-size:30px;
+
+transition:.35s;
+
+z-index:20;
+
+}
+
+.back-btn:hover{
+
+background:white;
+
+color:#0077cc;
+
+transform:translateX(-5px);
+
+}
+/*==========================
+SECTION TITLES
+==========================*/
+
+.title{
+text-align:center;
+font-size:40px;
+color:#0066cc;
+margin-bottom:50px;
+}
+
+/*==========================
+CORE VALUES
+==========================*/
+
+.values{
+padding:90px 8%;
+background:white;
+}
+
+.values-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.value-card{
+background:#eef8ff;
+padding:30px;
+border-radius:15px;
+text-align:center;
+transition:.3s;
+}
+
+.value-card:hover{
+transform:translateY(-10px);
+}
+
+.icon{
+font-size:50px;
+margin-bottom:20px;
+}
+
+/*==========================
+WHY CHOOSE
+==========================*/
+
+.choose{
+padding:90px 8%;
+background:#f8fcff;
+}
+
+.choose-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.choose-box{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+/*==========================
+FACTORY
+==========================*/
+
+.factory{
+padding:90px 8%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.factory img{
+width:100%;
+border-radius:15px;
+}
+
+.factory-text h2{
+color:#0066cc;
+margin-bottom:20px;
+}
+
+.factory-text p{
+line-height:1.8;
+margin-bottom:15px;
+}
+
+/*==========================
+STATS
+==========================*/
+
+.stats{
+background:#0066cc;
+color:white;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+text-align:center;
+padding:70px 8%;
+}
+
+.stat h2{
+font-size:45px;
+margin-bottom:10px;
+}
+
+/*==========================
+CTA
+==========================*/
+
+.cta{
+padding:90px 20px;
+text-align:center;
+background:linear-gradient(135deg,#0066cc,#00bfff);
+color:white;
+}
+
+.cta a{
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+background:white;
+color:#0066cc;
+text-decoration:none;
+border-radius:40px;
+font-weight:bold;
+}
+
+/*==========================
+FOOTER
+==========================*/
+
+footer{
+background:#003b73;
+color:white;
+text-align:center;
+padding:50px 20px;
+}
+
+footer hr{
+margin:30px auto;
+width:80%;
+border:1px solid rgba(255,255,255,.2);
+}
+
+@media(max-width:900px){
+
+.factory{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+<header>
+<div class="logo">
+
+💧 OBC Water
+
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="products.html">Products</a>
+
+<a href="comservice.html">Services</a>
+
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<h1>About OBC Water</h1>
+
+<p>
+
+Providing Pure, Safe & Refreshing Drinking Water
+
+</p>
+
+</div>
+
+</section>
+
+<section class="story">
+
+<div>
+
+<img src="factory.png" alt="Factory">
+
+</div>
+
+<div>
+
+<h2>Our Story</h2>
+
+<p>
+
+OBC Water is committed to producing high-quality drinking water using modern purification technology and strict hygiene standards. We proudly serve homes, schools, offices, hotels and events with safe, refreshing water.
+
+Our goal is to ensure every customer enjoys premium-quality water at an affordable price while receiving outstanding customer service.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="mv">
+
+<div class="box">
+
+<h2>Our Mission</h2>
+
+<p>
+
+To provide clean, safe and affordable drinking water through advanced purification technology while exceeding customer expectations with reliable delivery and excellent service.
+
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Our Vision</h2>
+
+<p>
+
+To become one of Nigeria's leading drinking water companies by delivering quality products, embracing innovation and building lasting customer trust.
+
+</p>
+
+</div>
+
+</section>
+<!-- =========================
+CORE VALUES
+========================= -->
+
+<section class="values">
+
+<h2 class="title">Our Core Values</h2>
+
+<div class="values-container">
+
+<div class="value-card">
+<div class="icon">💧</div>
+<h3>Quality</h3>
+<p>We are committed to providing clean, safe and premium-quality drinking water every day.</p>
+</div>
+
+<div class="value-card">
+<div class="icon">🤝</div>
+<h3>Integrity</h3>
+<p>We operate with honesty, transparency and professionalism in everything we do.</p>
+</div>
+
+<div class="value-card">
+<div class="icon">🚚</div>
+<h3>Reliability</h3>
+<p>Customers can count on us for timely delivery and dependable service.</p>
+</div>
+
+<div class="value-card">
+<div class="icon">🌍</div>
+<h3>Sustainability</h3>
+<p>We care about our environment and encourage responsible water production.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+WHY CHOOSE US
+========================= -->
+
+<section class="choose">
+
+<h2 class="title">Why Choose OBC Water?</h2>
+
+<div class="choose-grid">
+
+<div class="choose-box">
+<h3>Modern Purification</h3>
+<p>Our purification process combines advanced filtration and sterilization for maximum safety.</p>
+</div>
+
+<div class="choose-box">
+<h3>Hygienic Packaging</h3>
+<p>Every sachet and bottle is sealed under strict hygienic conditions.</p>
+</div>
+
+<div class="choose-box">
+<h3>Fast Delivery</h3>
+<p>We deliver promptly to homes, offices, schools and events.</p>
+</div>
+
+<div class="choose-box">
+<h3>Affordable Prices</h3>
+<p>Quality drinking water at prices that fit your budget.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+FACTORY
+========================= -->
+
+<section class="factory">
+
+<div class="factory-image">
+<img src="factory.jpg" alt="OBC Water Factory">
+</div>
+
+<div class="factory-text">
+
+<h2>Our Production Facility</h2>
+
+<p>
+Our modern production facility uses advanced water treatment technology to ensure every product meets high standards of purity and safety.
+</p>
+
+<p>
+Every batch is tested before packaging and delivery, ensuring you receive fresh, hygienically processed drinking water.
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+STATISTICS
+========================= -->
+
+<section class="stats">
+
+<div class="stat">
+<h2>10+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h2>5000+</h2>
+<p>Satisfied Customers</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Quality Assurance</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Customer Support</p>
+</div>
+
+</section>
+
+<!-- =========================
+CALL TO ACTION
+========================= -->
+
+<section class="cta">
+
+<h2>Experience the OBC Water Difference</h2>
+
+<p>Fresh, safe and affordable drinking water delivered when you need it.</p>
+
+<a href="order.html">Order Water Now</a>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<h2>💧 OBC Water</h2>
+
+<p>Clean Water • Healthy Living • Trusted Quality</p>
+
+<p>📍 Asaba, Delta State, Nigeria</p>
+
+<p>📞 +234 9129471458</p>
+
+<p>📧 oshiokpubenedict96@gmail.com</p>
+
+<hr>
+
+<p>© 2026 OBC Water. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>

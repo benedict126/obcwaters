@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Unit | OBC WATER - Premium Bottled & Sachet Water</title>
+    <meta name="description" content="Explore OBC WATER's state-of-the-art production facility. Modern purification technology ensuring pure, clean, and safe hydration.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- ROOT VARIABLES & RESET --- */
+        :root {
+            --primary: #0066cc;
+            --primary-dark: #004080;
+            --primary-light: #e6f0fa;
+            --accent: #00c3ff;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --shadow: 0 10px 30px rgba(0, 102, 204, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- REUSABLE COMPONENTS --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 102, 204, 0.12);
+        }
+
+        /* --- ANIMATIONS (SCROLL REVEAL) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- 1. HERO SECTION --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 32, 96, 0.75), rgba(0, 64, 128, 0.65)), 
+                        url('https://images.unsplash.com/photo-1548839140-29a749e1cf4e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 35px;
+            color: #e2e8f0;
+        }
+
+        /* --- 2. ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .about-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .about-list i {
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 0.9rem;
+        }
+
+        /* --- 3. PRODUCTION PROCESS TIMELINE --- */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            position: relative;
+        }
+
+        .process-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.25);
+        }
+
+        .process-step {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .process-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .process-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- 4. FACTORY STATISTICS --- */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #dbeafe;
+        }
+
+        /* --- 5. GALLERY --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 240px;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0, 32, 96, 0.85));
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* --- 6. QUALITY ASSURANCE --- */
+        .qa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .qa-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qa-card i {
+            font-size: 1.25rem;
+            color: #10b981;
+            background: #d1fae5;
+            padding: 12px;
+            border-radius: 50%;
+        }
+
+        /* --- 7. EQUIPMENT SECTION --- */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .equipment-card {
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .equipment-img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .equipment-info {
+            padding: 20px;
+        }
+
+        .equipment-info h3 {
+            font-size: 1.15rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .equipment-info p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* --- 8. SAFETY & HYGIENE --- */
+        .safety-container {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .safety-item {
+            text-align: center;
+        }
+
+        .safety-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* --- 9. CERTIFICATIONS --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+
+        .cert-card i {
+            font-size: 2.5rem;
+            color: #f59e0b;
+            margin-bottom: 15px;
+        }
+
+        /* --- 10. WHY CHOOSE OBC WATER --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* --- 11. VIDEO SECTION --- */
+        .video-box {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: #000;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 0 30px rgba(0, 102, 204, 0.5);
+        }
+
+        .play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--accent);
+        }
+
+        /* --- 12. CALL TO ACTION --- */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        /* --- 13. FOOTER --- */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 70px 0 20px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.875rem;
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.25rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-links {
+                display: none; /* Can be expanded into a mobile drawer */
+            }
+            .video-placeholder {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-droplet"></i> OBC WATER
+            </a>
+            <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#equipment">Equipment</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#quality">Quality</a></li>
+                <a href="drivers-department.html">Drivers</a>
+        <a href="accounting-department.html">Accounting</a>
+        <a href="security-department.html">Security</a>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <header class="hero">
+        <div class="container hero-content reveal">
+            <h1>Our Production Unit</h1>
+            <p>Where Advanced Technology Meets Pure Hydration.</p>
+            <a href="#process" class="btn btn-primary">Explore Our Process</a>
+        </div>
+    </header>
+
+    <!-- 2. ABOUT THE PRODUCTION UNIT -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <h2 class="section-title">Purity Engine of OBC WATER</h2>
+                    <p>At OBC WATER, we deploy multi-stage purification protocols and modern manufacturing technology to ensure every drop of sachet and bottled water is exceptionally clean, fresh, and safe for consumption.</p>
+                    <ul class="about-list">
+                        <li><i class="fa-solid fa-check"></i> WHO standard production practices</li>
+                        <li><i class="fa-solid fa-check"></i> Strict quality control mechanisms</li>
+                        <li><i class="fa-solid fa-check"></i> Ultra-hygienic processing environment</li>
+                        <li><i class="fa-solid fa-check"></i> Modern automated equipment</li>
+                        <li><i class="fa-solid fa-check"></i> Daily production & lab monitoring</li>
+                    </ul>
+                </div>
+                <div class="about-img reveal">
+                    <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=800&q=80" alt="OBC Water Production Line">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PRODUCTION PROCESS TIMELINE -->
+    <section id="process" class="section-padding" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Our Production Process</h2>
+            <p class="section-subtitle text-center reveal">A step-by-step overview of how we refine, purify, and package our water.</p>
+            
+            <div class="process-grid">
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+                    <div class="process-step">Step 01</div>
+                    <h3>Water Collection</h3>
+                    <p>Raw water is ethically sourced from deep, pristine underground aquifers.</p>
+                </div>
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-filter"></i></div>
+                    <div class="process-step">Step 02</div>
+                    <h3>Pre-Filtration</h3>
+                    <p>Initial filtering stages capture large suspended solids and sediment particles.</p>
+                </div>
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+                    <div class="process-step">Step 03</div>
+                    <h3>Sand Filtration</h3>
+                    <p>Multi-media sand beds filter out finer turbidity and physical impurities.</p>
+                </div>
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="process-step">Step 04</div>
+                    <h3>Activated Carbon</h3>
+                    <p>Removes chlorine, unpleasant odours, organic compounds, and corrects taste.</p>
+                </div>
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-atom"></i></div>
+                    <div class="process-step">Step 05</div>
+                    <h3>Reverse Osmosis</h3>
+                    <p>High-pressure semi-permeable membranes strip out dissolved minerals and toxins.</p>
+                </div>
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-sun"></i></div>
+                    <div class="process-step">Step 06</div>
+                    <h3>UV Sterilization</h3>
+                    <p>Ultraviolet lamps eradicate micro-organisms without chemical additives.</p>
+                </div>
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="process-step">Step 07</div>
+                    <h3>Ozonation</h3>
+                    <p>Infuses active oxygen to eliminate remaining bacteria and extend shelf stability.</p>
+                </div>
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-wine-bottle"></i></div>
+                    <div class="process-step">Step 08</div>
+                    <h3>Automatic Filling</h3>
+                    <p>Automated non-contact lines fill bottles and sachets under sterile conditions.</p>
+                </div>
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-box-seam"></i></div>
+                    <div class="process-step">Step 09</div>
+                    <h3>Sealing & Packaging</h3>
+                    <p>Tamper-proof hermetic sealing locks in ultimate freshness.</p>
+                </div>
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-microscope"></i></div>
+                    <div class="process-step">Step 10</div>
+                    <h3>Quality Inspection</h3>
+                    <p>Batch samples undergo rigorous physical, chemical, and microbiological checks.</p>
+                </div>
+                <div class="glass-card process-card reveal">
+                    <div class="process-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <div class="process-step">Step 11</div>
+                    <h3>Distribution</h3>
+                    <p>Safely dispatched through our fleet to vendors, businesses, and homes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FACTORY STATISTICS -->
+    <section class="section-padding stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <i class="fa-solid fa-glass-water"></i>
+                    <div class="stat-number" data-target="15000">0</div>
+                    <div class="stat-label">Litres Produced Daily</div>
+                </div>
+                <div class="stat-item reveal">
+                    <i class="fa-solid fa-shield-virus"></i>
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">% Purified Water</div>
+                </div>
+                <div class="stat-item reveal">
+                    <i class="fa-solid fa-clock"></i>
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">24/7 Production</div>
+                </div>
+                <div class="stat-item reveal">
+                    <i class="fa-solid fa-bacteria"></i>
+                    <div class="stat-number" data-target="99">0</div>
+                    <div class="stat-label">% Bacteria Removal</div>
+                </div>
+                <div class="stat-item reveal">
+                    <i class="fa-solid fa-users"></i>
+                    <div class="stat-number" data-target="1000">0</div>
+                    <div class="stat-label">Customers Served Weekly</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PRODUCTION GALLERY -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Production Gallery</h2>
+            <p class="section-subtitle text-center reveal">Take a visual tour inside our clean-room facilities and operations.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Purification Machine">
+                    <div class="gallery-overlay">Water Purification Systems</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="RO System">
+                    <div class="gallery-overlay">Reverse Osmosis Plant</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=600&q=80" alt="Bottling Machine">
+                    <div class="gallery-overlay">Automated Bottling Line</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="sachet.png" alt="Sachet Machine">
+                    <div class="gallery-overlay">Sachet Packaging Unit</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Factory Workers">
+                    <div class="gallery-overlay">Skilled Production Personnel</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Laboratory Testing">
+                    <div class="gallery-overlay">Quality Assurance Laboratory</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Warehouse">
+                    <div class="gallery-overlay">Clean Storage Warehouse</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="Delivery Fleet">
+                    <div class="gallery-overlay">Distribution Logistics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. QUALITY ASSURANCE SECTION -->
+    <section id="quality" class="section-padding" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Quality Assurance</h2>
+            <p class="section-subtitle text-center reveal">We adhere strictly to highest standards to guarantee total safety.</p>
+            
+            <div class="qa-grid">
+                <div class="glass-card qa-card reveal">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div><strong>Multi-Stage Purification</strong><br><small>Eliminates compounds at microscopic levels.</small></div>
+                </div>
+                <div class="glass-card qa-card reveal">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div><strong>Laboratory Testing</strong><br><small>In-house daily microbial & chemical analysis.</small></div>
+                </div>
+                <div class="glass-card qa-card reveal">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div><strong>Regular Equipment Maintenance</strong><br><small>Scheduled servicing ensuring smooth runs.</small></div>
+                </div>
+                <div class="glass-card qa-card reveal">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div><strong>Hygienic Packaging</strong><br><small>Untouched, highly sealed, leak-proof materials.</small></div>
+                </div>
+                <div class="glass-card qa-card reveal">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div><strong>Safe Storage</strong><br><small>Climate-monitored, spotless warehousing facilities.</small></div>
+                </div>
+                <div class="glass-card qa-card reveal">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div><strong>Continuous Monitoring</strong><br><small>24/7 sensory oversight across filling lines.</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. EQUIPMENT SECTION -->
+    <section id="equipment" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Our Modern Equipment</h2>
+            <p class="section-subtitle text-center reveal">Engineered for accuracy, high-volume production, and purity.</p>
+            
+            <div class="equipment-grid">
+                <div class="glass-card equipment-card reveal">
+                    <img class="equipment-img" src="osmosis.png" alt="RO Machine">
+                    <div class="equipment-info">
+                        <h3>Reverse Osmosis Machine</h3>
+                        <p>High-efficiency membrane units that strip dissolved solids and ions.</p>
+                    </div>
+                </div>
+                <div class="glass-card equipment-card reveal">
+                    <img class="equipment-img" src="uv-srerilizer.png" alt="UV Sterilizer">
+                    <div class="equipment-info">
+                        <h3>UV Sterilizer</h3>
+                        <p>High-output ultraviolet rays neutralize pathogen DNA rapidly.</p>
+                    </div>
+                </div>
+                <div class="glass-card equipment-card reveal">
+                    <img class="equipment-img" src="storagetank.png" alt="Ozone Generator">
+                    <div class="equipment-info">
+                        <h3>Ozone Generator</h3>
+                        <p>Generates active ozone molecules for residual water preservation.</p>
+                    </div>
+                </div>
+                <div class="glass-card equipment-card reveal">
+                    <img class="equipment-img" src="bottle-filling.png" alt="Bottle Filling Machine">
+                    <div class="equipment-info">
+                        <h3>Bottle Filling Machine</h3>
+                        <p>Automated volumetric filling lines operating in cleanrooms.</p>
+                    </div>
+                </div>
+                <div class="glass-card equipment-card reveal">
+                    <img class="equipment-img" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" alt="Sachet Packing Machine">
+                    <div class="equipment-info">
+                        <h3>Sachet Packing Machine</h3>
+                        <p>Forms, fills, and hermetically seals sachet units quickly.</p>
+                    </div>
+                </div>
+                <div class="glass-card equipment-card reveal">
+                    <img class="equipment-img" src="watertank.png" alt="Storage Tanks">
+                    <div class="equipment-info">
+                        <h3>Water Storage Tanks</h3>
+                        <p>Food-grade stainless steel tanks keeping water ultra-safe.</p>
+                    </div>
+                </div>
+                <div class="glass-card equipment-card reveal">
+                    <img class="equipment-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=500&q=80" alt="Conveyor System">
+                    <div class="equipment-info">
+                        <h3>Conveyor System</h3>
+                        <p>Seamless automated routing from washing to final box packaging.</p>
+                    </div>
+                </div>
+                <div class="glass-card equipment-card reveal">
+                    <img class="equipment-img" src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=500&q=80" alt="Quality Testing Equipment">
+                    <div class="equipment-info">
+                        <h3>Quality Testing Equipment</h3>
+                        <p>Digital meters testing total dissolved solids, pH, and purity continuously.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. SAFETY & HYGIENE -->
+    <section class="section-padding" style="background-color: #f1f5f9;">
+        <div class="container">
+            <div class="safety-container reveal">
+                <h2 class="section-title text-center">Safety & Hygiene Protocols</h2>
+                <p class="section-subtitle text-center">Our strict workplace safety standards guard against contamination.</p>
+                
+                <div class="safety-grid">
+                    <div class="safety-item">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h4>PPE Compliant</h4>
+                        <p><small>Staff wear complete protective wear in processing rooms.</small></p>
+                    </div>
+                    <div class="safety-item">
+                        <i class="fa-solid fa-head-side-mask"></i>
+                        <h4>Masks & Nets</h4>
+                        <p><small>Hair nets, masks, and sanitary gear are non-negotiable.</small></p>
+                    </div>
+                    <div class="safety-item">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                        <h4>Gloves Required</h4>
+                        <p><small>Sterile gloves ensure zero direct contact with containers.</small></p>
+                    </div>
+                    <div class="safety-item">
+                        <i class="fa-solid fa-pump-soap"></i>
+                        <h4>Daily Sanitation</h4>
+                        <p><small>Full facility cleaning procedures run every evening.</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CERTIFICATIONS -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Regulatory Certifications</h2>
+            <p class="section-subtitle text-center reveal">Certified by leading quality and health agencies.</p>
+            
+            <div class="cert-grid">
+                <div class="glass-card cert-card reveal">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>NAFDAC Approved</h3>
+                    <p><small>Fully registered under national safety boards.</small></p>
+                </div>
+                <div class="glass-card cert-card reveal">
+                    <i class="fa-solid fa-certificate"></i>
+                    <h3>SON Standard</h3>
+                    <p><small>Compliant with Standards Organisation requirements.</small></p>
+                </div>
+                <div class="glass-card cert-card reveal">
+                    <i class="fa-solid fa-pump-soap"></i>
+                    <h3>Hygienic Production</h3>
+                    <p><small>Verified clean-room procedures.</small></p>
+                </div>
+                <div class="glass-card cert-card reveal">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <h3>Quality Assurance</h3>
+                    <p><small>Regular audits by health inspectors.</small></p>
+                </div>
+                <div class="glass-card cert-card reveal">
+                    <i class="fa-solid fa-glass-water-droplet"></i>
+                    <h3>Safe Drinking Water</h3>
+                    <p><small>100% compliant with WHO drinking guidelines.</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. WHY CHOOSE OBC WATER? -->
+    <section class="section-padding" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Why Choose OBC WATER?</h2>
+            <p class="section-subtitle text-center reveal">Why thousands of families, businesses, and event organizers rely on us.</p>
+            
+            <div class="features-grid">
+                <div class="glass-card feature-card reveal">
+                    <i class="fa-solid fa-gem"></i>
+                    <h3>Crystal Clear Water</h3>
+                    <p><small>Pistine appearance and crisp, refreshing taste.</small></p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <i class="fa-solid fa-microchip"></i>
+                    <h3>Advanced Purification</h3>
+                    <p><small>Multi-tiered technological processing.</small></p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <i class="fa-solid fa-tags"></i>
+                    <h3>Affordable Prices</h3>
+                    <p><small>Premium quality delivered at budget-friendly rates.</small></p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                    <h3>Fast Distribution</h3>
+                    <p><small>Prompt delivery through optimized supply channels.</small></p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h3>Eco-Friendly</h3>
+                    <p><small>Responsible resource recycling and minimal waste emissions.</small></p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <i class="fa-solid fa-building-circle-check"></i>
+                    <h3>Trusted Brand</h3>
+                    <p><small>Proven operational history with continuous reliability.</small></p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <i class="fa-solid fa-star"></i>
+                    <h3>Premium Quality</h3>
+                    <p><small>Consistently tested to guarantee zero compromise.</small></p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <h3>Customer Satisfaction</h3>
+                    <p><small>Dedicated support and customized order handling.</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. VIDEO SECTION -->
+    <!-- 11. VIDEO SECTION -->
+<!-- 11. VIDEO SECTION -->
+
+
+    <!-- 12. CALL-TO-ACTION -->
+    <section class="section-padding cta-section">
+        <div class="container reveal">
+            <h2>Experience Premium Quality Water Today</h2>
+            <p style="margin-top: 10px;">Place an order or get in touch with our team for bulk supplies.</p>
+            <div class="cta-buttons">
+                <a href="order.html" class="btn btn-primary" style="background: var(--white); color: var(--primary-dark);">Order Now</a>
+                <a href="contact.html" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color: var(--white); margin-bottom: 15px;">
+                        <i class="fa-solid fa-droplet"></i> OBC WATER
+                    </a>
+                    <p><small>Providing pure, safe, and refreshing hydration solutions for homes, businesses, and communities.</small></p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#process">Production Process</a></li>
+                        <li><a href="#equipment">Our Equipment</a></li>
+                        <li><a href="#quality">Quality Standards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">Premium Bottled Water (50cl)</a></li>
+                        <li><a href="#">Premium Bottled Water (75cl)</a></li>
+                        <li><a href="#">Pure Sachet Water (50cl)</a></li>
+                        <li><a href="#">Dispenser Refill Bottles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Information</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-envelope"></i>oshiokpubenedict96@gmail.com</li>
+                        <li><i class="fa-solid fa-phone"></i> +234 912 947 1458</li>
+                        <li><i class="fa-solid fa-location-dot"></i> 12 dou asaba, delta state</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 OBC WATER. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // --- 1. Scroll Reveal Animation ---
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Run once on page load
+
+        // --- 2. Animated Counters ---
+        let animated = false;
+        function animateCounters() {
+            const statsSection = document.querySelector('.stats-section');
+            const sectionPos = statsSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight;
+
+            if (sectionPos < screenPos && !animated) {
+                const counters = document.querySelectorAll('.stat-number');
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
+                    const speed = target / 80;
+
+                    const updateCount = () => {
+                        count += speed;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count).toLocaleString();
+                            setTimeout(updateCount, 25);
+                        } else {
+                            counter.innerText = target.toLocaleString() + (target === 100 || target === 99 ? '%' : '+');
+                        }
+                    };
+                    updateCount();
+                });
+                animated = true;
+            }
+        }
+
+        window.addEventListener('scroll', animateCounters);
+
+        // --- 3. Interactive Video Player ---
+        document.getElementById('videoBox').addEventListener('click', function() {
+            this.innerHTML = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/1HWGA6uqQWw?autoplay=1" title="OBC Water Factory Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+        });
+    </script>
+</body>
+</html>

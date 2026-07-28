@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | OBC Water - Premium Purified Water</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0A2540;
+            --primary-blue: #007BFF;
+            --accent-cyan: #00F0FF;
+            --pure-white: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #F8FAFC 0%, #E0F2FE 50%, #F0F9FF 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
+            border-radius: 2px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* --- 1. HERO SECTION --- */
+        .hero {
+            position: relative;
+            height: 75vh;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--pure-white);
+            background: linear-gradient(rgba(10, 37, 64, 0.65), rgba(10, 37, 64, 0.45));
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 80% 20%, #007BFF 0%, #0A2540 100%);
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            padding: 0 20px;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(180deg, #FFFFFF 0%, #E0F2FE 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: #E2E8F0;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .btn-shop {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            background: var(--pure-white);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-shop::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--primary-blue));
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: 1;
+        }
+
+        .btn-shop span, .btn-shop i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-shop:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.5);
+            color: var(--pure-white);
+        }
+
+        .btn-shop:hover::before {
+            opacity: 1;
+        }
+
+        /* --- 2. PRODUCT CATALOGUE GRID (CLEANED) --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .product-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
+            transition: var(--transition-smooth);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 123, 255, 0.1);
+            border-color: rgba(0, 123, 255, 0.25);
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 16px;
+        }
+
+        .product-card i.placeholder-water {
+            font-size: 6.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 8px 16px rgba(0,123,255,0.15));
+            transition: var(--transition-smooth);
+        }
+
+        .product-card:hover i.placeholder-water {
+            transform: scale(1.06) rotate(2deg);
+        }
+
+        .product-size {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0, 123, 255, 0.08);
+            color: var(--primary-blue);
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 30px;
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+
+        .product-name {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        /* --- 3. PRODUCT FEATURES --- */
+        .features {
+            background: linear-gradient(180deg, rgba(224, 242, 254, 0.4) 0%, rgba(255,255,255,0) 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--pure-white);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            box-shadow: 0 16px 32px rgba(15, 23, 42, 0.03);
+            border: 1px solid rgba(0, 123, 255, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px rgba(0, 123, 255, 0.06);
+        }
+
+        .feature-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 24px;
+            background: rgba(0, 123, 255, 0.06);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover .feature-icon-wrapper {
+            background: var(--primary-blue);
+            color: var(--pure-white);
+            transform: rotateY(180deg);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- 4. COMPARE OUR PRODUCTS --- */
+        .table-wrapper {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.05);
+            overflow-x: auto;
+            margin-bottom: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 18px 24px;
+        }
+
+        th {
+            background: rgba(10, 37, 64, 0.04);
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1rem;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+        }
+
+        td {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .table-product-name {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .table-product-name i {
+            color: var(--primary-blue);
+        }
+
+        .badge-best {
+            padding: 4px 12px;
+            background: var(--pure-white);
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            color: var(--primary-blue);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Bottom Sticky CTA Layer */
+        .sticky-order-bar {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
+            .products-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+        }
+        /* Top Left Go Back Button */
+.btn-back {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(10, 37, 64, 0.08);
+    transition: var(--transition-smooth);
+}
+
+.btn-back:hover {
+    background: var(--pure-white);
+    transform: translateX(-4px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.15);
+    color: var(--primary-blue);
+}
+    </style>
+</head>
+<body>
+<!-- Go Back Button -->
+<a href="index.html" class="btn-back">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Go Back</span>
+</a>
+    <!-- 1. HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Our Products</h1>
+            <p>Discover our range of premium purified water products, carefully produced to keep you refreshed every day.</p>
+            <a href="order.html" class="btn-shop">
+                <span>Shop Now & Order</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. CLEAN PRODUCT CATALOGUE (Directs to order.html on click) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Hydration Lineup</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <a href="order.html" class="product-card">
+                    <div class="product-img-wrapper">
+                        <i class="fa-solid fa-box-tissue placeholder-water"></i>
+                    </div>
+                    <span class="product-size">Bag</span>
+                    <h3 class="product-name">Sachet Water</h3>
+                    <p class="product-desc">Premium hygienically sealed sachet water for your quick hydration needs.</p>
+                    <span class="price-tag">₦500</span>
+                </a>
+
+                <!-- Product 2 -->
+                <a href="order.html" class="product-card">
+                    <div class="product-img-wrapper">
+                        <i class="fa-solid fa-bottle-water placeholder-water"></i>
+                    </div>
+                    <span class="product-size">50cl</span>
+                    <h3 class="product-name">50cl Bottled Water</h3>
+                    <p class="product-desc">Perfect compact size for daily structural hydration on the move.</p>
+                    <span class="price-tag">₦200</span>
+                </a>
+
+                <!-- Product 3 -->
+                <a href="order.html" class="product-card">
+                    <div class="product-img-wrapper">
+                        <i class="fa-solid fa-bottle-water placeholder-water" style="transform: scale(1.05);"></i>
+                    </div>
+                    <span class="product-size">75cl</span>
+                    <h3 class="product-name">75cl Bottled Water</h3>
+                    <p class="product-desc">Ideal hydration volume engineered for travel, premium events, and offices.</p>
+                    <span class="price-tag">₦300</span>
+                </a>
+
+                <!-- Product 4 -->
+                <a href="order.html" class="product-card">
+                    <div class="product-img-wrapper">
+                        <i class="fa-solid fa-bottle-water placeholder-water" style="transform: scale(1.15);"></i>
+                    </div>
+                    <span class="product-size">1.5L</span>
+                    <h3 class="product-name">1.5L Bottled Water</h3>
+                    <p class="product-desc">Family-size purified drinking water to share well-being at the table.</p>
+                    <span class="price-tag">₦1,000</span>
+                </a>
+
+                <!-- Product 5 -->
+                <a href="order.html" class="product-card">
+                    <div class="product-img-wrapper">
+                        <i class="fa-solid fa-faucet-drip placeholder-water"></i>
+                    </div>
+                    <span class="product-size">19L</span>
+                    <h3 class="product-name">Water Dispenser</h3>
+                    <p class="product-desc">Suitable high-volume setup perfectly calculated for modern homes and offices.</p>
+                    <span class="price-tag">₦5,000</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PRODUCT FEATURES SECTION -->
+    <section class="section-padding features">
+        <div class="container">
+            <div class="section-header">
+                <h2>The OBC Premium Standard</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-droplet"></i></div>
+                    <h3>100% Purified Water</h3>
+                    <p>Processed through ultra-modern multi-stage filtration systems.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>NAFDAC Standard</h3>
+                    <p>Fully compliant with certified clean regulatory frameworks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-box"></i></div>
+                    <h3>Hygienically Packaged</h3>
+                    <p>Untouched production systems maintain absolute organic purity.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-smile"></i></div>
+                    <h3>Great Taste</h3>
+                    <p>Crisp, light, neutral profile carefully balanced for taste excellence.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-tags"></i></div>
+                    <h3>Affordable Prices</h3>
+                    <p>Uncompromising luxury tier hydration priced reasonably for value.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Eco-Friendly Packaging</h3>
+                    <p>Committed to completely circular, 100% recyclable structures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. COMPARE OUR PRODUCTS SECTION -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Compare Our Products</h2>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Size</th>
+                            <th>Best For</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="table-product-name"><i class="fa-solid fa-box-tissue"></i> Sachet Water</div></td>
+                            <td>Bag</td>
+                            <td><span class="badge-best">Everyday Use</span></td>
+                            <td><strong>₦500</strong></td>
+                        </tr>
+                        <tr>
+                            <td><div class="table-product-name"><i class="fa-solid fa-bottle-water"></i> 50cl Bottle</div></td>
+                            <td>50cl</td>
+                            <td><span class="badge-best">Personal Use</span></td>
+                            <td><strong>₦200</strong></td>
+                        </tr>
+                        <tr>
+                            <td><div class="table-product-name"><i class="fa-solid fa-bottle-water"></i> 75cl Bottle</div></td>
+                            <td>75cl</td>
+                            <td><span class="badge-best">Outdoor Activities</span></td>
+                            <td><strong>₦300</strong></td>
+                        </tr>
+                        <tr>
+                            <td><div class="table-product-name"><i class="fa-solid fa-bottle-water"></i> 1.5L Bottle</div></td>
+                            <td>1.5L</td>
+                            <td><span class="badge-best">Families</span></td>
+                            <td><strong>₦1000</strong></td>
+                        </tr>
+                        <tr>
+                            <td><div class="table-product-name"><i class="fa-solid fa-faucet-drip"></i> Water Dispenser</div></td>
+                            <td>19L</td>
+                            <td><span class="badge-best">Home & Office</span></td>
+                            <td><strong>₦5000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Single obvious conversion touchpoint at the bottom -->
+            <div class="sticky-order-bar">
+                <a href="order.html" class="btn-shop" style="box-shadow: 0 10px 35px rgba(0, 123, 255, 0.25);">
+                    <span>Ready to Order? Click Here</span>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

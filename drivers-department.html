@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drivers Department | OBC Water</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="department-style.css" />
+  <style>
+    /* Inline styles for the Drivers Spotlight Card */
+    .driver-spotlight {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      margin-top: 3rem;
+    }
+
+    .driver-image-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      max-height: 400px;
+    }
+
+    .driver-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .driver-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+      color: #1e293b;
+    }
+
+    .driver-info .role {
+      font-weight: 600;
+      color: #0284c7;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .driver-spotlight {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a href="index.html" class="brand"><i class="fa-solid fa-droplet"></i><span>OBC Water</span></a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+         <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="drivers-department.html">Drivers</a>
+        <a href="accounting-department.html">Accounting</a>
+        <a href="prounit.html">Production</a>
+        <a href="security-department.html">Security</a>
+       
+        </div>
+        <a href="order.html" class="order-btn">Order Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-shell hero-grid">
+        <div>
+          <div class="eyebrow"><i class="fa-solid fa-truck-fast"></i> Drivers Department</div>
+          <h1>Smooth deliveries, dependable routes, and real-time transport support.</h1>
+          <p>The drivers team coordinates routes, attendance, vehicle readiness, and delivery confirmations for every scheduled drop-off.</p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">View Delivery Tools</a>
+            <a href="order.html" class="btn btn-secondary">Book Delivery</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <h3>Operations highlight</h3>
+          <div class="stat-list">
+            <div class="stat-item"><i class="fa-solid fa-calendar-days"></i> Delivery schedule</div>
+            <div class="stat-item"><i class="fa-solid fa-clipboard-check"></i> Driver attendance</div>
+            <div class="stat-item"><i class="fa-solid fa-map-location-dot"></i> Route assignments</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section page-shell">
+      <div class="section-heading">
+        <h2>Department services</h2>
+        <p>Built for dependable dispatch, vehicle readiness, and customer delivery assurance.</p>
+      </div>
+      <div class="card-grid">
+        <article class="feature-card">
+          <i class="fa-solid fa-calendar-days"></i>
+          <h3>Delivery Schedule</h3>
+          <p>Organize daily and weekly delivery plans for smooth service execution.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fa-solid fa-user-check"></i>
+          <h3>Driver Attendance</h3>
+          <p>Track clock-in, shift readiness, and staff availability at a glance.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fa-solid fa-route"></i>
+          <h3>Route Assignments</h3>
+          <p>Assign delivery routes efficiently to reduce delays and improve coverage.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fa-solid fa-car-side"></i>
+          <h3>Vehicle Status</h3>
+          <p>Monitor vehicle readiness, maintenance notes, and operational conditions.</p>
+        </article>
+      </div>
+
+      <!-- DRIVER SPOTLIGHT SECTION -->
+      <div class="driver-spotlight">
+        <div class="driver-image-wrapper">
+          <!-- REPLACE 'images/driver-and-truck.jpg' WITH YOUR ACTUAL PHOTO PATH -->
+          <img src="driver.png" alt="OBC Water Logistics Lead with Delivery Truck" />
+        </div>
+        <div class="driver-info">
+          <h3>Logistics & Distribution Fleet</h3>
+          <span class="role">Head of Logistics & Fleet Operations</span>
+          <p>Our experienced delivery drivers and fleet managers ensure that pure OBC Water reaches homes, businesses, and retailers safely, on time, and with full route tracking efficiency.</p>
+        </div>
+      </div>
+
+      <div class="cta-banner">
+        <div>
+          <h3>Delivery confirmation</h3>
+          <p>Keep customer deliveries secure, timely, and fully documented.</p>
+        </div>
+        <a href="ddashboard.html" class="btn btn-primary">Confirm Delivery</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+    const dropdown = document.querySelector('.dropdown');
+
+    toggle?.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    dropdown?.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

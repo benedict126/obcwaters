@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order Water | OBC Water</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+💧 OBC Water
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="products.html">Products</a>
+
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Order Premium Water</h1>
+
+<p>
+
+Choose your products and we'll deliver them fresh to your doorstep.
+
+</p>
+
+</section>
+
+<!-- ORDER FORM -->
+
+<section class="order-container">
+
+<form
+id="orderForm"
+action="https://formspree.io/f/xgojjrre"
+method="POST">
+
+<h2>Customer Information</h2>
+<input
+type="text"
+name="Full Name"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+id="email"
+name="email"
+placeholder="Email Address"
+required>
+
+<input
+type="tel"
+name="Phone"
+placeholder="Phone Number"
+required>
+
+<input
+type="text"
+name="Address"
+placeholder="Delivery Address"
+required>
+
+<hr>
+
+<h2>Select Products</h2>
+
+<div class="products">
+
+<!-- PRODUCT 1 -->
+
+<div class="product">
+
+<img src="sachetwater.png" alt="Sachet Water">
+
+<div class="details">
+
+<h3>Sachet Water</h3>
+
+<p>₦500 Per Bag</p>
+
+<label>Quantity</label>
+
+<div class="qty-box">
+
+<button type="button" onclick="changeQty('sachet', -1)">−</button>
+
+<input
+type="number"
+id="sachet"
+name="Sachet Water Quantity"
+value="0"
+min="0"
+readonly>
+
+<button type="button" onclick="changeQty('sachet', 1)">+</button>
+
+
+</div>
+
+</div>
+</div>
+
+<!-- PRODUCT 2 -->
+
+<div class="product">
+
+<img src="50cl.png" alt="50cl">
+
+<div class="details">
+
+<h3>50cl Bottled Water</h3>
+
+<p>₦200 Each</p>
+
+<label>Quantity</label>
+
+<div class="qty-box">
+
+<button type="button" onclick="changeQty('bottle50',-1)">−</button>
+
+<input
+type="number"
+id="bottle50"
+name="50cl Bottled Water Quantity"
+value="0"
+min="0"
+readonly>
+
+<button type="button" onclick="changeQty('bottle50',1)">+</button>
+
+
+</div>
+
+</div>
+</div>
+
+<!-- PRODUCT 3 -->
+
+<div class="product">
+
+<img src="75cl.png" alt="75cl">
+
+<div class="details">
+
+<h3>75cl Bottled Water</h3>
+
+<p>₦300 Each</p>
+
+<label>Quantity</label>
+
+<div class="qty-box">
+
+<button type="button" onclick="changeQty('bottle75',-1)">−</button>
+
+<input
+type="number"
+id="bottle75"
+name="75cl Bottled Water Quantity"
+value="0"
+min="0"
+readonly>
+
+<button type="button" onclick="changeQty('bottle75',1)">+</button>
+
+</div>
+
+</div>
+</div>
+
+<!-- PRODUCT 4 -->
+
+<div class="product">
+
+<img src="1.5L.png" alt="1.5L">
+
+<div class="details">
+
+<h3>1.5L Bottled Water</h3>
+
+<p>₦1,000 Each</p>
+
+<label>Quantity</label>
+
+<div class="qty-box">
+
+<button type="button" onclick="changeQty('bottle15',-1)">−</button>
+
+<input
+type="number"
+id="bottle15"
+name="1.5L Bottled Water Quantity"
+value="0"
+min="0"
+readonly>
+
+<button type="button" onclick="changeQty('bottle15',1)">+</button>
+
+
+</div>
+
+</div>
+</div>
+
+<!-- PRODUCT 5 -->
+
+<div class="product">
+
+<img src="dispencer.png" alt="Dispenser">
+
+<div class="details">
+
+<h3>Water Dispenser</h3>
+
+<p>₦5,000 Each</p>
+
+<label>Quantity</label>
+
+<div class="qty-box">
+
+<button type="button" onclick="changeQty('dispenser',-1)">−</button>
+
+<input
+type="number"
+id="dispenser"
+name="Water Dispenser Quantity"
+value="0"
+min="0"
+readonly>
+
+<button type="button" onclick="changeQty('dispenser',1)">+</button>
+
+
+</div>
+
+</div>
+</div>
+</div>
+<hr>
+
+<h2>Delivery Details</h2>
+
+<input
+type="date"
+name="Delivery Date"
+required>
+
+<input
+type="time"
+name="Delivery Time"
+required>
+
+<select
+name="Payment Method"
+required>
+
+<option value="">Select Payment Method</option>
+
+<option>Cash on Delivery</option>
+
+<option>Bank Transfer</option>
+
+<option>POS on Delivery</option>
+
+</select>
+
+<textarea
+name="Special Instructions"
+placeholder="Additional delivery instructions (optional)"
+rows="5"></textarea>
+
+<!-- ORDER SUMMARY -->
+
+<div class="summary">
+
+<h2>Order Summary</h2>
+
+<div class="summary-item">
+
+<span>Sachet Water</span>
+
+<span id="sumSachet">0</span>
+
+</div>
+
+<div class="summary-item">
+
+<span>50cl Bottled Water</span>
+
+<span id="sum50">0</span>
+
+</div>
+
+<div class="summary-item">
+
+<span>75cl Bottled Water</span>
+
+<span id="sum75">0</span>
+
+</div>
+
+<div class="summary-item">
+
+<span>1.5L Bottled Water</span>
+
+<span id="sum15">0</span>
+
+</div>
+
+<div class="summary-item">
+
+<span>Water Dispenser</span>
+
+<span id="sumDisp">0</span>
+
+</div>
+
+<hr>
+
+<div class="total">
+
+Estimated Total:
+
+<strong id="totalPrice">₦0</strong>
+
+</div>
+
+<input
+type="hidden"
+ name="_subject"
+ value="New OBC Water Order">
+
+<input
+ type="hidden"
+ id="replyto"
+ name="_replyto"
+ value="">
+
+<input
+ type="hidden"
+ name="_next"
+ value="thank-you.html">
+
+<button
+type="submit"
+class="order-btn">
+🛒 Place Order
+</button>
+
+
+</div>
+
+</form>
+
+</section>
+
+<footer>
+
+<h2>💧 OBC Water</h2>
+
+<p>Clean Water • Trusted Quality • Fast Delivery</p>
+
+<p>📍 Asaba, Delta State</p>
+
+<p>📞 +234 XXX XXX XXXX</p>
+
+<p>📧 info@obcwater.com</p>
+
+<hr>
+
+<p>© 2026 OBC Water. All Rights Reserved.</p>
+
+</footer>
+<input
+type="hidden"
+id="replyto"
+name="_replyto"
+value="">
+<script>
+
+document.getElementById("email").addEventListener("input", function(){
+
+document.getElementById("replyto").value = this.value;
+
+});
+
+</script>
+<script src="order.js"></script>
+
+</body>
+</html>

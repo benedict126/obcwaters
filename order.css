@@ -1,0 +1,442 @@
+/* ===========================
+OBC WATER ORDER PAGE
+Part 3A
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+background:#f5fbff;
+color:#333;
+line-height:1.6;
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+header{
+background:#0066cc;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:white;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#9be8ff;
+}
+
+/* ===========================
+HERO
+=========================== */
+
+.hero{
+height:380px;
+background:
+linear-gradient(rgba(0,80,150,.70),rgba(0,80,150,.70)),
+url("images/order-banner.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+max-width:700px;
+}
+
+/* ===========================
+ORDER SECTION
+=========================== */
+
+.order-container{
+padding:80px 8%;
+}
+
+.order-container form{
+max-width:1000px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.10);
+}
+
+.order-container h2{
+color:#0066cc;
+margin-bottom:25px;
+}
+
+.order-container hr{
+margin:40px 0;
+border:none;
+height:1px;
+background:#ddd;
+}
+
+/* ===========================
+INPUTS
+=========================== */
+
+input,
+select,
+textarea{
+width:100%;
+padding:15px;
+margin-bottom:20px;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:16px;
+outline:none;
+transition:.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#0099ff;
+box-shadow:0 0 8px rgba(0,153,255,.3);
+}
+
+textarea{
+resize:vertical;
+}
+
+/* ===========================
+PRODUCT CARD
+=========================== */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.product{
+display:flex;
+align-items:center;
+gap:20px;
+padding:20px;
+margin-bottom:25px;
+background:#eef8ff;
+border-radius:15px;
+transition:.3s;
+}
+
+.product:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.product img{
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.details{
+flex:1;
+}
+
+.details h3{
+color:#0066cc;
+margin-bottom:10px;
+}
+
+.details p{
+font-size:18px;
+font-weight:bold;
+color:#0099ff;
+margin-bottom:15px;
+}
+
+.details label{
+display:block;
+margin-bottom:8px;
+font-weight:600;
+}
+
+.details input[type="number"]{
+width:120px;
+margin-bottom:0;
+}
+
+/* ===========================
+BUTTON
+=========================== */
+
+.order-btn{
+width:100%;
+padding:18px;
+background:#0066cc;
+color:white;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:40px;
+cursor:pointer;
+transition:.3s;
+}
+
+.order-btn:hover{
+background:#0099ff;
+transform:translateY(-2px);
+}
+/* ===========================
+ORDER SUMMARY
+=========================== */
+
+.summary{
+margin-top:40px;
+background:#f8fcff;
+padding:30px;
+border-radius:15px;
+border:2px solid #d9ecff;
+}
+
+.summary h2{
+color:#0066cc;
+margin-bottom:25px;
+text-align:center;
+}
+
+.summary-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+border-bottom:1px solid #ddd;
+font-size:17px;
+}
+
+.summary-item:last-child{
+border-bottom:none;
+}
+
+.summary-item span:last-child{
+font-weight:bold;
+color:#0066cc;
+}
+
+.total{
+margin-top:30px;
+padding:20px;
+background:#0066cc;
+color:white;
+border-radius:12px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:22px;
+font-weight:bold;
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+background:#003b73;
+color:white;
+text-align:center;
+padding:60px 20px;
+margin-top:80px;
+}
+
+footer h2{
+margin-bottom:20px;
+}
+
+footer p{
+margin:10px 0;
+}
+
+footer hr{
+width:80%;
+margin:30px auto;
+border:1px solid rgba(255,255,255,.2);
+}
+
+/* ===========================
+SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#eef8ff;
+}
+
+::-webkit-scrollbar-thumb{
+background:#0066cc;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:#0099ff;
+}
+
+/* ===========================
+SMOOTH ANIMATION
+=========================== */
+
+html{
+scroll-behavior:smooth;
+}
+
+.product,
+.summary,
+.order-container form,
+.order-btn{
+transition:all .3s ease;
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+padding:15px;
+}
+
+.logo{
+margin-bottom:15px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+nav a{
+margin:0;
+}
+
+.hero{
+height:auto;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.order-container{
+padding:50px 20px;
+}
+
+.order-container form{
+padding:25px;
+}
+
+.product{
+flex-direction:column;
+text-align:center;
+}
+
+.product img{
+width:180px;
+height:180px;
+}
+
+.details input[type="number"]{
+width:100%;
+}
+
+.summary-item{
+font-size:15px;
+}
+
+.total{
+flex-direction:column;
+gap:10px;
+text-align:center;
+font-size:20px;
+}
+
+footer{
+padding:40px 20px;
+}
+
+}
+/* Quantity Selector */
+
+.qty-box{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:10px;
+}
+
+.qty-box button{
+width:45px;
+height:45px;
+border:none;
+background:#0066cc;
+color:#fff;
+font-size:24px;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+.qty-box button:hover{
+background:#0099ff;
+}
+
+.qty-box input{
+width:70px;
+text-align:center;
+font-size:20px;
+font-weight:bold;
+margin:0;
+background:#fff;
+}

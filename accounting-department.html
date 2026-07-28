@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accounting Department | OBC Water</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="department-style.css" />
+  <style>
+    /* Inline styles for the Accountant Profile Card */
+    .accountant-spotlight {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      margin-top: 3rem;
+    }
+
+    .accountant-image-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      max-height: 400px;
+    }
+
+    .accountant-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .accountant-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+      color: #1e293b;
+    }
+
+    .accountant-info .role {
+      font-weight: 600;
+      color: #0284c7;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .accountant-spotlight {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a href="First.html" class="brand"><i class="fa-solid fa-droplet"></i><span>OBC Water</span></a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="drivers-department.html">Drivers</a>
+        <a href="accounting-department.html">Accounting</a>
+        <a href="prounit.html">Production</a>
+        <a href="security-department.html">Security</a>
+        </div>
+        <a href="order.html" class="order-btn">Order Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-shell hero-grid">
+        <div>
+          <div class="eyebrow"><i class="fa-solid fa-sack-dollar"></i> Accounting Department</div>
+          <h1>Precision finance management for a growing water business.</h1>
+          <p>The accounting team manages payment verification, invoicing, revenue reporting, and expense tracking with clarity and speed.</p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">View Financial Tools</a>
+            <a href="order.html" class="btn btn-secondary">Review Orders</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <h3>Core priorities</h3>
+          <div class="stat-list">
+            <div class="stat-item"><i class="fa-solid fa-circle-check"></i> Payment verification</div>
+            <div class="stat-item"><i class="fa-solid fa-file-invoice-dollar"></i> Invoice management</div>
+            <div class="stat-item"><i class="fa-solid fa-chart-line"></i> Revenue reports</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section page-shell">
+      <div class="section-heading">
+        <h2>Department services</h2>
+        <p>Reliable operations for financial oversight, reporting, and planning.</p>
+      </div>
+      <div class="card-grid">
+        <article class="feature-card">
+          <i class="fa-solid fa-money-check"></i>
+          <h3>Payment Verification</h3>
+          <p>Confirm all incoming payments and maintain secure transaction records.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fa-solid fa-file-invoice"></i>
+          <h3>Invoice Management</h3>
+          <p>Track invoices, balances, and customer billing tasks in one place.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fa-solid fa-chart-column"></i>
+          <h3>Sales and Revenue Reports</h3>
+          <p>Visualize monthly trends and track business performance clearly.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <h3>Expense Records</h3>
+          <p>Monitor expenditures and oversee spend categories with confidence.</p>
+        </article>
+      </div>
+
+      <!-- NEW ACCOUNTANT SPOTLIGHT SECTION -->
+      <div class="accountant-spotlight">
+        <div class="accountant-image-wrapper">
+          <!-- REPLACE 'images/accountant-at-desk.jpg' WITH YOUR ACTUAL PHOTO PATH -->
+          <img src="accountant.png" alt="OBC Water Lead Accountant at desk" />
+        </div>
+        <div class="accountant-info">
+          <h3>Meet Our Financial Desk</h3>
+          <span class="role">Head of Accounting & Finance</span>
+          <p>Our dedicated accounting desk ensures that every transaction is processed seamlessly, vendor accounts are managed efficiently, and financial records for OBC Water remain fully transparent and audited.</p>
+        </div>
+      </div>
+
+      <div class="cta-banner">
+        <div>
+          <h3>Financial dashboard</h3>
+          <p>Access a streamlined view of financial performance and operations.</p>
+        </div>
+        <a href="fdadhboard.html" class="btn btn-primary">Open Dashboard</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+    const dropdown = document.querySelector('.dropdown');
+
+    toggle?.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    dropdown?.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

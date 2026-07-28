@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | OBC Water</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#eef8ff;
+color:#222;
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+height:60vh;
+background:
+linear-gradient(rgba(0,70,130,.55),rgba(0,70,130,.55)),
+url("water-background.jpg") center center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(to top,
+rgba(255,255,255,.12),
+transparent);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding:20px;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+max-width:700px;
+margin:auto;
+line-height:1.6;
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+
+position:absolute;
+
+top:30px;
+
+left:30px;
+
+width:55px;
+
+height:55px;
+
+background:rgba(255,255,255,.15);
+
+border:2px solid rgba(255,255,255,.35);
+
+backdrop-filter:blur(10px);
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-decoration:none;
+
+color:white;
+
+font-size:30px;
+
+transition:.35s;
+
+z-index:20;
+
+}
+
+.back-btn:hover{
+
+background:white;
+
+color:#0077cc;
+
+transform:translateX(-5px);
+
+}
+
+/* MAIN */
+
+.container{
+
+width:90%;
+
+max-width:1200px;
+
+margin:auto;
+
+margin-top:-90px;
+
+position:relative;
+
+z-index:5;
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:30px;
+
+}
+
+/* CONTACT FORM */
+
+.contact-form{
+
+background:white;
+
+padding:40px;
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+.contact-form h2{
+
+font-size:35px;
+
+color:#0077cc;
+
+margin-bottom:10px;
+
+}
+
+.contact-form p{
+
+margin-bottom:30px;
+
+color:#666;
+
+}
+
+.row{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+
+}
+
+.input-box{
+
+margin-bottom:20px;
+
+}
+
+.input-box input,
+
+.input-box textarea{
+
+width:100%;
+
+padding:18px;
+
+border:1px solid #ddd;
+
+border-radius:12px;
+
+font-size:16px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.input-box input:focus,
+
+.input-box textarea:focus{
+
+border-color:#0099ff;
+
+box-shadow:0 0 10px rgba(0,153,255,.2);
+
+}
+
+textarea{
+
+height:170px;
+
+resize:none;
+
+}
+
+.send-btn{
+
+width:100%;
+
+padding:18px;
+
+background:linear-gradient(90deg,#0099ff,#0066cc);
+
+border:none;
+
+border-radius:12px;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.send-btn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 25px rgba(0,119,204,.35);
+
+}
+
+/* CONTACT INFO */
+
+.contact-info{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.info-card{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.info-card h3{
+
+color:#0077cc;
+
+margin-bottom:10px;
+
+}
+.info-card p{
+line-height:1.8;
+color:#555;
+}
+
+.whatsapp-btn{
+display:block;
+text-align:center;
+background:#25D366;
+color:white;
+text-decoration:none;
+padding:16px;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+transition:.3s;
+margin-top:10px;
+}
+
+.whatsapp-btn:hover{
+background:#1EBE57;
+}
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+margin-top:-50px;
+}
+
+.row{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<a href="index.html" class="back-btn">&#8592;</a>
+
+<div class="hero-content">
+
+<h1>Contact OBC Water</h1>
+
+<p>
+We're always ready to answer your questions and
+deliver clean, safe drinking water to your home
+or business.
+</p>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<div class="contact-form">
+
+<h2>Send Us a Message</h2>
+
+<p>
+Fill out the form below and we'll get back to you
+as soon as possible.
+</p>
+
+<form action="https://formspree.io/f/xgojjrre" method="POST">
+
+<div class="row">
+
+<div class="input-box">
+
+<input
+type="text"
+name="firstname"
+placeholder="First Name"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="text"
+name="lastname"
+placeholder="Last Name"
+required>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="input-box">
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="tel"
+name="phone"
+placeholder="Phone Number"
+required>
+
+</div>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="text"
+name="subject"
+placeholder="Subject">
+
+</div>
+
+<div class="input-box">
+
+<textarea
+name="message"
+placeholder="Write your message here..."
+required></textarea>
+
+</div>
+
+<button
+class="send-btn"
+type="submit">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+<div class="contact-info">
+
+<div class="info-card">
+
+<h3>📞 Phone</h3>
+
+<p>
+09129471458
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>📧 Email</h3>
+
+<p>
+oshiokpubenedict96@gmail.com
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>🕒 Working Hours</h3>
+
+<p>
+Monday - Saturday<br>
+
+8:00 AM - 6:00 PM
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>💬 WhatsApp</h3>
+
+<a
+class="whatsapp-btn"
+href="https://wa.me/2349129471458">
+
+Chat With Us
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+<!-- Google Map -->
+
+<section style="padding:60px 20px;background:#ffffff;">
+
+<h2 style="text-align:center;color:#0077cc;margin-bottom:30px;">
+Find Us
+</h2>
+
+<div style="max-width:1100px;margin:auto;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.15);">
+
+<iframe
+src="https://maps.google.com/maps?q=Asaba&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="400"
+style="border:0;"
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer style="background:#003d66;color:white;padding:50px 20px;">
+
+<div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;">
+
+<div>
+
+<h2>OBC Water</h2>
+
+<p style="margin-top:15px;line-height:1.8;">
+Clean Water.<br>
+Reliable Delivery.<br>
+Trusted Service.
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<p style="margin-top:15px;">
+<a href="index.html" style="color:white;text-decoration:none;">Home</a>
+</p>
+
+<p>
+<a href="about.html" style="color:white;text-decoration:none;">About</a>
+</p>
+
+<p>
+<a href="comservice.html" style="color:white;text-decoration:none;">Services</a>
+</p>
+
+<p>
+<a href="contact.html" style="color:white;text-decoration:none;">Contact</a>
+</p>
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+<p style="margin-top:15px;">
+📞 09129471458
+</p>
+
+<p>
+📧 oshiokpubenedict96@gmail.com
+</p>
+
+<p>
+🕒 Mon – Sat | 8:00 AM – 6:00 PM
+</p>
+
+</div>
+
+</div>
+
+<hr style="margin:40px 0;border-color:rgba(255,255,255,.2);">
+
+<p style="text-align:center;">
+© 2026 OBC Water. All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+const cards=document.querySelectorAll('.info-card,.contact-form');
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity='1';
+
+entry.target.style.transform='translateY(0)';
+
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+
+card.style.opacity='0';
+
+card.style.transform='translateY(40px)';
+
+card.style.transition='all .8s ease';
+
+observer.observe(card);
+
+});
+
+</script>
+
+</body>
+</html>
